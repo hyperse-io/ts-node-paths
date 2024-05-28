@@ -121,14 +121,25 @@ This package reads the `tsconfig.json` file (and is capable to find values if th
 
 The fields listed in the example of above are all required in order to the correct working of the package.
 
-### ...with **ESM** projects
+### ...with **ESM** `type:module` projects
+
+- scripts
+
+  ```json
+  // node 20+ using --import
+  {
+    "serve": "yarn node --import=@armit/path-alias/register ./config/dev-server.ts"
+  }
+  ```
 
 - Execute the source code with **ts-node:**
 
-  ```bash
   node \
   --loader @hyperse/ts-node-paths/esm \
   ./src/index.ts
+
+  ```
+
   ```
 
 - Execute the transpiled code:
