@@ -1,0 +1,104 @@
+{
+  "name": "@hyperse/ts-node-paths",
+  "version": "1.0.0",
+  "description": "Executes a command using `file ...arguments`, supports `.ts` file for esm type module.",
+  "keywords": [
+    "hyperse",
+    "ts",
+    "typescript",
+    "tsconfig",
+    "ts-config",
+    "ts-node",
+    "ts paths",
+    "ts node esm",
+    "ts node paths",
+    "tsconfig.json",
+    "path",
+    "alias",
+    "mapping"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hyperse-io/ts-node-paths.git"
+  },
+  "type": "module",
+  "exports": {
+    "./cjs": {
+      "require": "./dist/register/index.cjs"
+    },
+    "./esm": {
+      "import": "./dist/loader/index.mjs"
+    },
+    "./register": {
+      "import": "./dist/loader/register.mjs"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./bin/",
+    "./dist/",
+    "./index.js"
+  ],
+  "scripts": {
+    "build": "tsx ./scripts/build.ts",
+    "next": "next build",
+    "lint": "eslint .",
+    "lint-fix": "yarn lint --fix",
+    "test": "run-s test-unit",
+    "test-unit": "vitest run",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "lint-staged-files": "lint-staged --allow-empty",
+    "changeset": "changeset",
+    "release": "yarn build && changeset publish",
+    "cz": "cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "get-tsconfig": "^4.7.5",
+    "module-alias": "^2.2.3",
+    "pkg-up": "^5.0.0",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.3",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@hyperse/eslint-config-hyperse": "^1.0.4",
+    "@types/module-alias": "2.0.4",
+    "@types/node": "^20.12.12",
+    "@types/shell-quote": "1.7.5",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^9.3.0",
+    "husky": "9.0.11",
+    "is-ci": "3.0.1",
+    "lint-staged": "15.2.5",
+    "npm-run-all": "^4.1.5",
+    "shell-quote": "1.8.1",
+    "ts-node": "11.0.0-beta.1",
+    "tsup": "^8.0.2",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "yarn@4.2.2"
+}

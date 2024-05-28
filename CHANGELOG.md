@@ -1,0 +1,1 @@
+# @hyperse/ts-node-paths
