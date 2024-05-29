@@ -44,13 +44,9 @@ Also, this package is **experimental** and probably can generate unexpected beha
 
 ## Installation
 
-If you don't have installed ts-node, now is the moment:
+We don't need to installed ts-node, now is the moment:
 
-```bash
-npm i --save-dev ts-node
-```
-
-...and install this package as a dependency:
+just install this package as a dependency:
 
 ```bash
 npm i --save @hyperse/ts-node-paths
