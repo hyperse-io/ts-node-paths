@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.3
+
+### Patch Changes
+
+- [`eef08a3`](https://github.com/hyperse-io/ts-node-paths/commit/eef08a3bed0631d2117d7dd9d2820eb5ffdad635) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add `verbose` message env
+
 ## 1.0.2
 
 ### Patch Changes
