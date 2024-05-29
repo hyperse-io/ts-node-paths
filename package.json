@@ -23,14 +23,11 @@
   },
   "type": "module",
   "exports": {
-    "./cjs": {
-      "require": "./dist/register/index.cjs"
-    },
     "./esm": {
-      "import": "./dist/loader/index.mjs"
+      "import": "./dist/loader/esm.js"
     },
     "./register": {
-      "import": "./dist/loader/register.mjs"
+      "import": "./dist/loader/register.js"
     },
     ".": {
       "types": "./dist/index.d.ts",
@@ -64,10 +61,12 @@
     }
   },
   "dependencies": {
+    "colorette": "^2.0.20",
     "dotenv": "^16.4.5",
     "get-tsconfig": "^4.7.5",
     "module-alias": "^2.2.3",
     "pkg-up": "^5.0.0",
+    "ts-node": "11.0.0-beta.1",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
@@ -82,12 +81,12 @@
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^9.3.0",
+    "execa": "^9.1.0",
     "husky": "9.0.11",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.5",
     "npm-run-all": "^4.1.5",
     "shell-quote": "1.8.1",
-    "ts-node": "11.0.0-beta.1",
     "tsup": "^8.0.2",
     "tsx": "^4.11.0",
     "typescript": "^5.4.5",

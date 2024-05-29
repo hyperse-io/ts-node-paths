@@ -31,9 +31,12 @@ export function createMatchPath(
     return {
       ...s,
       // make sure that `paths` are without file extensions, remove `.js` from the end
-      // e.g. @armit/logger -> ['../../src/index.js']
-      // ==> { pattern:'@armit/logger', paths:['/Users/tianyingchun/Documents/flatjs-next/dev-kits/packages/logger/src/index']}
-      paths: s.paths.map((p) => p.replace(/\.js$/gi, '')),
+      // 1. paths: { "@hyperse/logger": ['../../src/index.js'] }
+      // 2. paths: { "@hyperse/logger": ['../../src/index.ts'] }
+      // ==> { pattern:'@hyperse/logger', paths:['/Users/tianyingchun/Documents/flatjs-next/dev-kits/packages/logger/src/index']}
+      paths: s.paths.map((p) =>
+        p.replace(/\.(js|jsx|cjs|mjs|ts|tsx|mts|cts)$/gi, '')
+      ),
     };
   });
 
@@ -43,9 +46,9 @@ export function createMatchPath(
     fileExists?: FileExistsSync,
     extensions?: Array<string>
   ) =>
-    // If the code contains import 'events' and it coincidentally matches the paths baseUrl /src/events directory,
+    // If the code contains import 'events' and it coincidentally matches the paths baseUrl `/src/events` directory,
     // it may cause the built-in events module to be incorrectly resolved as a relative module of the project.
-    // FIXME: recommmand config baseUrl:'./' Instead of use `./src`
+    // NOTE: recommmand config baseUrl:'./' Instead of use `./src`
     matchFromAbsolutePaths(
       absolutePaths,
       requestedModule,

@@ -1,9 +1,9 @@
 import { dirname, join, resolve } from 'path';
 import { pathToFileURL } from 'url';
 import { pathAlias } from '../path-alias.js';
-import { leftReplacer } from '../tool/left-replacer.js';
-import { searchMonoProjectDir } from '../tool/search-mono-project-dir.js';
 import { Tsconfig } from '../tsconfig/Tsconfig.js';
+import { leftReplacer } from './leftReplacer.js';
+import { searchMonoProjectDir } from './searchMonoProjectDir.js';
 
 export function replace(input: string, parentUrl?: string): string | undefined {
   // ParentURL is required
@@ -26,6 +26,7 @@ export function replace(input: string, parentUrl?: string): string | undefined {
   const tsconfig = new Tsconfig(
     projectCwd ? join(projectCwd, './tsconfig.json') : undefined
   );
+
   const tsconfigOpts = tsconfig.getOptions(projectCwd);
 
   const base = pathAlias.isTsNode
@@ -37,7 +38,7 @@ export function replace(input: string, parentUrl?: string): string | undefined {
       );
 
   if (path.startsWith(base)) {
-    // support config `@armit/logger/node`, `@armit/logger`
+    // support config `@hyperse/logger/node`, `@hyperse/logger`
     const pathEntries = Object.entries(tsconfigOpts.paths)
       .map(([k, v]) => ({
         alias: k.replace(/\*/g, ''),

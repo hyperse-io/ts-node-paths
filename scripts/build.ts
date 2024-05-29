@@ -18,36 +18,25 @@ async function buildAll() {
       clean: true,
       outExtension: undefined,
     },
-    'src/register/index.ts': {
-      format: ['cjs'],
-      entry: 'register/index',
-      dts: false,
-      clean: false,
-      outExtension() {
-        return {
-          js: `.cjs`,
-        };
-      },
-    },
-    'src/loader/index.mts': {
+    'src/loader/esm.ts': {
       format: ['esm'],
-      entry: 'loader/index',
+      entry: 'loader/esm',
       dts: false,
       clean: false,
       outExtension() {
         return {
-          js: `.mjs`,
+          js: `.js`,
         };
       },
     },
-    'src/loader/register.mts': {
+    'src/loader/register.ts': {
       format: ['esm'],
       entry: 'loader/register',
       dts: false,
       clean: false,
       outExtension() {
         return {
-          js: `.mjs`,
+          js: `.js`,
         };
       },
     },

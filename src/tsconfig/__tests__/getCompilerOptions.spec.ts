@@ -31,7 +31,6 @@ describe('get compiler options', () => {
 
   test('Read "tsconfig.03.json"', () => {
     const options = getCompilerOptions('./tsconfig-tests/tsconfig.03.json');
-    console.log(options);
     expect(options).toMatchObject({
       rootDir: './src',
       outDir: './dist',
@@ -40,6 +39,15 @@ describe('get compiler options', () => {
         '@models/*': ['./models/*'],
         '@tool/*': ['./tool/*'],
       },
+    });
+  });
+
+  test('Read "tsconfig.npm.json"', () => {
+    const options = getCompilerOptions('./tsconfig-tests/tsconfig.npm.json');
+    expect(options).toMatchObject({
+      target: 'ES2020',
+      module: 'NodeNext',
+      moduleResolution: 'NodeNext',
     });
   });
 

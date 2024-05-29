@@ -119,34 +119,32 @@ This package reads the `tsconfig.json` file (and is capable to find values if th
 }
 ```
 
+### ENV
+
+Path to tsconfig file. Environment: `TS_NODE_PATHS_PROJECT`
+
+```ts
+runTsScript(
+  program,
+  {
+    env: {
+      TS_NODE_PATHS_PROJECT: 'tsconfig.json',
+    },
+  },
+  ...args
+);
+```
+
 The fields listed in the example of above are all required in order to the correct working of the package.
 
 ### ...with **ESM** `type:module` projects
 
-- scripts
+- scripts (node 20+)
 
   ```json
-  // node 20+ using --import
   {
-    "serve": "yarn node --import=@armit/path-alias/register ./config/dev-server.ts"
+    "serve": "yarn node --import=@hyperse/ts-node-paths/register ./config/dev-server.ts"
   }
-  ```
-
-- Execute the source code with **ts-node:**
-
-  node \
-  --loader @hyperse/ts-node-paths/esm \
-  ./src/index.ts
-
-  ```
-
-  ```
-
-- Execute the transpiled code:
-  ```bash
-  node \
-  --loader @hyperse/ts-node-paths/esm \
-  ./dist/index.js
   ```
 
 ## Utilities
@@ -224,13 +222,10 @@ Optionally receives as second parameter an object with this options:
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
-  "ts-node": {
-    "files": true
-  },
   "compilerOptions": {
     // If the code contains import 'events' and it coincidentally matches the paths baseUrl /src/events directory,
     // it may cause the built-in events module to be incorrectly resolved as a relative module of the project.
-    // FIXME: recommmand config baseUrl:'./' Instead of use `./src`
+    // NOTE: recommmand config baseUrl:'./' Instead of use `./src`
     // Avoid run into issue of "builtin module `events` wrong resolved as `./src/events`"
     "baseUrl": "./",
     "allowJs": false,

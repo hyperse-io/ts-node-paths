@@ -1,3 +1,4 @@
+import { showWarns } from '../tool/showWarns.js';
 import { CompilerOptions } from '../types/tsconfig.js';
 import {
   TsConfigCompilerOptionsNotFoundError,
@@ -16,6 +17,10 @@ export function getCompilerOptions(path: string): CompilerOptions {
 
   if (!fields.every((field) => !!(compilerOptions as any)[field])) {
     throw new TsConfigFieldsNotFoundError();
+  }
+
+  if (compilerOptions.baseUrl === './src') {
+    showWarns("`baseUrl` use './' instead of `./src`");
   }
 
   return {

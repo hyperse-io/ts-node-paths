@@ -2,7 +2,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { HYPERSE_TS_NODE, HYPERSE_TS_NODE_PATHS } from './constants.js';
 import { pathAlias } from './path-alias.js';
-import { leftReplacer } from './tool/left-replacer.js';
+import { leftReplacer } from './tool/leftReplacer.js';
 
 /**
  * Checks if this library is already used in runtime.

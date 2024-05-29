@@ -10,17 +10,14 @@ declare module 'ts-node/esm' {
     defaultResolve: ResolveFn
   ) => Promise<{ url: string }>;
 
-  export type LoadFunction = (
-    url: string,
-    context: Record<string, unknown>,
-    loadFn: LoadFunction
-  ) => Promise<unknown>;
-
   export const resolve: ResolveFn;
-  export function load(
+
+  export type LoadFn = (
     url: string,
     context: Record<string, unknown>,
     loadFn: LoadFunction
-  ): any;
+  ) => any;
+
+  export const load: LoadFn;
   export function transformSource(): any;
 }

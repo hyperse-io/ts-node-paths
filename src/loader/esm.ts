@@ -1,20 +1,23 @@
-import type { LoadFunction, ResolveFn } from 'ts-node/esm';
-// Use the "load" function of ts-node only if applied
-import { load as loadTs, resolve as resolveTs } from 'ts-node/esm';
+import {
+  load as loadTs,
+  LoadFn,
+  resolve as resolveTs,
+  ResolveFn,
+} from 'ts-node/esm';
 import { pathToFileURL } from 'url';
 import { pathAlias } from '../path-alias.js';
-import { createMatchPath } from './create-match-path.js';
-import { replace } from './replace.mjs';
+import { createMatchPath } from '../tool/createMatchPath.js';
+import { replace } from '../tool/replace.js';
 import '../types/ts-node.d.js';
 
 pathAlias.showInConsole();
 
 const matchPath = createMatchPath(pathAlias.opts.baseUrl, pathAlias.opts.paths);
 
-export function load(
+export async function load(
   url: string,
   context: { conditions: string[]; format: string },
-  defaultLoad: LoadFunction
+  defaultLoad: LoadFn
 ): Promise<unknown> {
   const isTsNode = pathAlias.checkTsNode(url);
   if (isTsNode) {
@@ -25,7 +28,11 @@ export function load(
 }
 
 // Use the ts-node mechanism only if applied
-export const resolve: ResolveFn = (specifier, context, defaultResolve) => {
+export const resolve: ResolveFn = async (
+  specifier,
+  context,
+  defaultResolve
+) => {
   const isTsNode = pathAlias.checkTsNode(specifier, context);
   if (isTsNode) {
     // USE TS-NODE TO HANDLE THE INCOMING MODULES
@@ -64,7 +71,6 @@ export const resolve: ResolveFn = (specifier, context, defaultResolve) => {
         }
       }
     }
-
     return resolveTs(specifier, context, defaultResolve);
   } else {
     // Use node directly, skipping ts-node
