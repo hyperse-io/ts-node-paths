@@ -1,11 +1,7 @@
-import { config } from 'dotenv';
 import { fileURLToPath } from 'node:url';
 import { HYPERSE_TS_NODE, HYPERSE_TS_NODE_PATHS } from './constants.js';
 import { Tsconfig } from './tsconfig/index.js';
 import { CompilerOptions } from './types/tsconfig.js';
-
-// Parses the *.env file
-config();
 
 class PathAlias {
   #opts: CompilerOptions;
