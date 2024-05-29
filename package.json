@@ -64,7 +64,6 @@
     "colorette": "^2.0.20",
     "dotenv": "^16.4.5",
     "get-tsconfig": "^4.7.5",
-    "module-alias": "^2.2.3",
     "pkg-up": "^5.0.0",
     "ts-node": "11.0.0-beta.1",
     "tsconfig-paths": "^4.2.0"
@@ -75,7 +74,6 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@hyperse/eslint-config-hyperse": "^1.0.4",
-    "@types/module-alias": "2.0.4",
     "@types/node": "^20.12.12",
     "@types/shell-quote": "1.7.5",
     "commitizen": "4.3.0",
