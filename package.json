@@ -53,7 +53,8 @@
     "lint-staged-files": "lint-staged --allow-empty",
     "changeset": "changeset",
     "release": "yarn build && changeset publish",
-    "cz": "cz"
+    "cz": "cz",
+    "postinstall": "is-ci || husky"
   },
   "config": {
     "commitizen": {
