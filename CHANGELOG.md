@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.5
+
+### Patch Changes
+
+- [`e8ccc44`](https://github.com/hyperse-io/ts-node-paths/commit/e8ccc44b1a640f280668e6ed964be2451c050589) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Remove autoload `.env`, avoid other library(like `next.js`) depends `.env` with load order
+
 ## 1.0.4
 
 ### Patch Changes
