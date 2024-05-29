@@ -131,9 +131,11 @@ runTsScript(
 );
 ```
 
+Enable `verbose` status messages by Environment: `HYPERSE_TS_NODE_PATHS_VERBOSE`
+
 The fields listed in the example of above are all required in order to the correct working of the package.
 
-### ...with **ESM** `type:module` projects
+### with **ESM** `type:module` projects
 
 - scripts (node 20+)
 

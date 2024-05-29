@@ -23,19 +23,26 @@ class PathAlias {
     (process as any)[HYPERSE_TS_NODE_PATHS] = true;
 
     // Get options
-    const tsconfig = new Tsconfig(path ?? process.env.TS_NODE_PATHS_PROJECT);
+    const tsconfig = new Tsconfig(path ?? process.env['TS_NODE_PATHS_PROJECT']);
     this.#opts = tsconfig.getOptions();
 
     // Check if the path is on source
     this.#isTsNode = false;
   }
 
+  get verbose(): boolean {
+    const verbose = process.env['HYPERSE_TS_NODE_PATHS_VERBOSE'];
+    return verbose?.toLowerCase() === 'true';
+  }
+
   showInConsole(): void {
-    console.log('------------------------------------');
-    console.log('@hyperse/ts-node-paths');
-    console.log(`> type   : 'ESM'};`);
-    console.log('Preparing to execute...');
-    console.log('------------------------------------');
+    if (this.verbose) {
+      console.log('------------------------------------');
+      console.log('@hyperse/ts-node-paths');
+      console.log(`> type   : 'ESM'};`);
+      console.log('Preparing to execute...');
+      console.log('------------------------------------');
+    }
   }
 
   checkTsNode(url: string): boolean;
@@ -63,11 +70,13 @@ class PathAlias {
     }
 
     if (this.#isTsNode && !found) {
-      console.log('------------------------------------');
-      console.log('> Source file found!');
-      console.log('  Using "ts-node/esm"...');
-      console.log('------------------------------------');
-      (process as any)[HYPERSE_TS_NODE] = true;
+      if (this.verbose) {
+        console.log('------------------------------------');
+        console.log('> Source file found!');
+        console.log('  Using "ts-node/esm"...');
+        console.log('------------------------------------');
+        (process as any)[HYPERSE_TS_NODE] = true;
+      }
     }
 
     return this.#isTsNode;
