@@ -54,7 +54,7 @@
     "changeset": "changeset",
     "release": "yarn build && changeset publish",
     "cz": "cz",
-    "postinstall": "is-ci || husky"
+    "postinstall": "is-ci && husky"
   },
   "config": {
     "commitizen": {
