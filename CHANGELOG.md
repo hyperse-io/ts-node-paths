@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.4
+
+### Patch Changes
+
+- [`7347a81`](https://github.com/hyperse-io/ts-node-paths/commit/7347a81b2cfd3b2a138aa16372ad9f6766a851a6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - clean package.json
+
 ## 1.0.3
 
 ### Patch Changes
