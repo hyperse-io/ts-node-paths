@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.6
+
+### Patch Changes
+
+- [`2f33206`](https://github.com/hyperse-io/ts-node-paths/commit/2f33206e2d6a76f652a13228100259131cb39393) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bugfix for ts-node flag cache
+
 ## 1.0.5
 
 ### Patch Changes
