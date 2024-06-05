@@ -71,8 +71,8 @@ class PathAlias {
         console.log('> Source file found!');
         console.log('  Using "ts-node/esm"...');
         console.log('------------------------------------');
-        (process as any)[HYPERSE_TS_NODE] = true;
       }
+      (process as any)[HYPERSE_TS_NODE] = true;
     }
 
     return this.#isTsNode;
