@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.7
+
+### Patch Changes
+
+- [`e6d14ab`](https://github.com/hyperse-io/ts-node-paths/commit/e6d14ab1063adff2b8355a0c11228c15c92aaf6f) Thanks [@tianyingchun](https://github.com/tianyingchun)! - migrate `pkg-up` to `package-up`
+
 ## 1.0.6
 
 ### Patch Changes
