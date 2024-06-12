@@ -20,7 +20,7 @@ export function getCompilerOptions(path: string): CompilerOptions {
   }
 
   if (compilerOptions.baseUrl === './src') {
-    showWarns("`baseUrl` use './' instead of `./src`");
+    showWarns("`baseUrl` use './' instead of `./src`", path);
   }
 
   return {
