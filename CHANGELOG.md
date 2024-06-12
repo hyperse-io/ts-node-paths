@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.8
+
+### Patch Changes
+
+- [`686f993`](https://github.com/hyperse-io/ts-node-paths/commit/686f993ccd359b20a5743627becc12c9d834c8a6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - imporved `Warn`
+
 ## 1.0.7
 
 ### Patch Changes
