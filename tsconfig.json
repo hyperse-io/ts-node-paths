@@ -4,19 +4,10 @@
     "baseUrl": "./src",
     "outDir": "dist",
     "rootDir": ".",
-    "types": [
-      "vitest/globals"
-    ],
+    "types": ["vitest/globals"],
     "paths": {
-      "@hyperse/ts-node-paths": [
-        "../src/index.js"
-      ]
+      "@hyperse/ts-node-paths": ["../src/index.js"]
     }
   },
-  "include": [
-    "scripts/build.ts",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["scripts/build.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

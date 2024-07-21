@@ -26,5 +26,7 @@ export function getCompilerOptions(path: string): CompilerOptions {
   return {
     paths: {},
     ...compilerOptions,
+    // force use `strict` to false here, we can avoid some unnecessary ts check errors
+    strict: false,
   } as CompilerOptions;
 }
