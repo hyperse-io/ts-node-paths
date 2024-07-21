@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.9
+
+### Patch Changes
+
+- [`c38d0f5`](https://github.com/hyperse-io/ts-node-paths/commit/c38d0f5f09dc2fa5aa9a0f4731cd020f34e40c7c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add `trict: false` to get better compatibility
+
 ## 1.0.8
 
 ### Patch Changes
