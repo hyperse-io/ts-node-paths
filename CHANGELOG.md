@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.10
+
+### Patch Changes
+
+- [`72bd099`](https://github.com/hyperse-io/ts-node-paths/commit/72bd099ae79f95960a86bab3cda7760afe659d39) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Use TypeScript's faster transpileModule
+
 ## 1.0.9
 
 ### Patch Changes
