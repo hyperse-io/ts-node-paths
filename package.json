@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/ts-node-paths",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Executes a command using `file ...arguments`, supports `.ts` file for esm type module.",
   "keywords": [
     "hyperse",
