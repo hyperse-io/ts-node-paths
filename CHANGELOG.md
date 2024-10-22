@@ -1,5 +1,11 @@
 # @hyperse/ts-node-paths
 
+## 1.0.11
+
+### Patch Changes
+
+- [`5fd2ccf`](https://github.com/hyperse-io/ts-node-paths/commit/5fd2ccf8727954e2a6db100af7514ebd66b38048) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version & force `verbatimModuleSyntax`: false
+
 ## 1.0.10
 
 ### Patch Changes
