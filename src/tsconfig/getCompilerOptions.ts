@@ -1,5 +1,5 @@
 import { showWarns } from '../tool/showWarns.js';
-import { CompilerOptions } from '../types/tsconfig.js';
+import { type CompilerOptions } from '../types/tsconfig.js';
 import {
   TsConfigCompilerOptionsNotFoundError,
   TsConfigFieldsNotFoundError,
@@ -28,5 +28,8 @@ export function getCompilerOptions(path: string): CompilerOptions {
     ...compilerOptions,
     // force use `strict` to false here, we can avoid some unnecessary ts check errors
     strict: false,
+    // force use `verbatimModuleSyntax` to false here, we can avoid some unnecessary ts check errors
+    // https://www.typescriptlang.org/tsconfig/#verbatimModuleSyntax
+    verbatimModuleSyntax: false,
   } as CompilerOptions;
 }

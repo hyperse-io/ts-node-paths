@@ -4,7 +4,7 @@
     "baseUrl": "./src",
     "outDir": "dist",
     "rootDir": ".",
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "node"],
     "paths": {
       "@hyperse/ts-node-paths": ["../src/index.js"]
     }

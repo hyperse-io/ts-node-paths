@@ -1,8 +1,8 @@
 import {
   load as loadTs,
-  LoadFn,
+  type LoadFn,
   resolve as resolveTs,
-  ResolveFn,
+  type ResolveFn,
 } from 'ts-node/esm';
 import { pathToFileURL } from 'url';
 import { pathAlias } from '../path-alias.js';

@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 import { HYPERSE_TS_NODE, HYPERSE_TS_NODE_PATHS } from './constants.js';
 import { Tsconfig } from './tsconfig/index.js';
-import { CompilerOptions } from './types/tsconfig.js';
+import { type CompilerOptions } from './types/tsconfig.js';
 
 class PathAlias {
   #opts: CompilerOptions;
