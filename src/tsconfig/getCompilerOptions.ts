@@ -23,6 +23,10 @@ export function getCompilerOptions(path: string): CompilerOptions {
     showWarns("`baseUrl` use './' instead of `./src`", path);
   }
 
+  // compatibility to support old typescript before 5.6.
+  // strictBuiltinIteratorReturn - strictBuiltinIteratorReturn Built-in iterators are instantiated with a `TReturn` type of undefined instead of `any`.
+  delete compilerOptions.strictBuiltinIteratorReturn;
+
   return {
     paths: {},
     // https://forgemia.inra.fr/lipme/ts-biofiledetector/-/blob/main/tsconfig.json
