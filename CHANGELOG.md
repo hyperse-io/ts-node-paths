@@ -1,5 +1,13 @@
 # @hyperse/ts-node-paths
 
+## 1.0.12
+
+### Patch Changes
+
+- [`6234340`](https://github.com/hyperse-io/ts-node-paths/commit/62343405e93d1e57603b407d997ae64080d3932e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`f790e7a`](https://github.com/hyperse-io/ts-node-paths/commit/f790e7abe913ea8c7a6f1129ee4326ee60bbe804) Thanks [@tianyingchun](https://github.com/tianyingchun)! - remove `strictBuiltinIteratorReturn` to support old typescript
+
 ## 1.0.11
 
 ### Patch Changes
