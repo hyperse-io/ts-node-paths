@@ -25,6 +25,7 @@ export function getCompilerOptions(path: string): CompilerOptions {
 
   return {
     paths: {},
+    // https://forgemia.inra.fr/lipme/ts-biofiledetector/-/blob/main/tsconfig.json
     ...compilerOptions,
     // force use `strict` to false here, we can avoid some unnecessary ts check errors
     strict: false,

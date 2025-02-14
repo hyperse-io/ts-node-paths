@@ -45,9 +45,9 @@ describe('get compiler options', () => {
   test('Read "tsconfig.npm.json"', () => {
     const options = getCompilerOptions('./tsconfig-tests/tsconfig.npm.json');
     expect(options).toMatchObject({
-      target: 'ES2020',
-      module: 'NodeNext',
-      moduleResolution: 'NodeNext',
+      module: 'nodenext',
+      moduleResolution: 'nodenext',
+      target: 'es2020',
     });
   });
 
